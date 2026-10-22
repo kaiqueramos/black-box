@@ -4,15 +4,15 @@
 window.CURRICULO = {
   phases: [
     { id: "base", num: "00", name: "Base", sub: "pré-requisitos", color: "#c9ff3f",
-      desc: "O que ninguém ensina porque assume que você já sabe." },
-    { id: "beginner", num: "01", name: "Iniciante", sub: "as primeiras falhas", color: "#3fe0ff",
-      desc: "Web, proxy e recon. Aqui você faz barulho pela primeira vez." },
-    { id: "inter", num: "02", name: "Intermediário", sub: "escolha um caminho", color: "#ffb020",
-      desc: "Aqui o mapa bifurca: web, infra ou produto/IA." },
-    { id: "advanced", num: "03", name: "Avançado", sub: "quando não existe receita", color: "#ff2e63",
-      desc: "Memória, evasão, pesquisa. O material começa a ficar escasso." },
-    { id: "expert", num: "04", name: "Especialista", sub: "produzir conhecimento", color: "#6dffb0",
-      desc: "Bug bounty, pesquisa própria e um projeto que é só seu." }
+      desc: "Sistema, rede, código e laboratório local." },
+    { id: "beginner", num: "01", name: "Iniciante", sub: "web e recon", color: "#3fe0ff",
+      desc: "Web, proxy, recon e configuração exposta." },
+    { id: "inter", num: "02", name: "Intermediário", sub: "trilhas", color: "#ffb020",
+      desc: "Três trilhas: web/API, infra/cloud e produto/IA." },
+    { id: "advanced", num: "03", name: "Avançado", sub: "exploit dev e pesquisa", color: "#ff2e63",
+      desc: "Exploit dev, evasão, fuzzing, DFIR e análise de malware." },
+    { id: "expert", num: "04", name: "Especialista", sub: "pesquisa própria", color: "#6dffb0",
+      desc: "Bug bounty, pesquisa, kernel, OT e projeto final." }
   ],
   nodes: {},
   flow: []
@@ -22,7 +22,7 @@ Object.assign(window.CURRICULO.nodes, {
   "00": {
     num: "00", phase: "base", title: "Alfabetização digital", labs: 180, weeks: 4,
     tags: ["sistema", "arquivos", "terminal", "ambiente"],
-    summary: "Antes de atacar, entender onde as coisas moram: processo, arquivo, usuário e ambiente.",
+    summary: "Processos, arquivos, usuários e variáveis de ambiente no Linux.",
     proof: [
       "Navegar por diretórios e entender caminhos absolutos e relativos",
       "Criar, mover, copiar e apagar arquivos com segurança",
@@ -47,7 +47,7 @@ Object.assign(window.CURRICULO.nodes, {
   "01": {
     num: "01", phase: "base", title: "Linux essencial", labs: 300, weeks: 6,
     tags: ["usuários", "permissões", "processos", "systemd"],
-    summary: "O sistema operacional é o campo de batalha. Saber onde olhar vale mais que qualquer ferramenta.",
+    summary: "Usuários, permissões, processos, systemd, /proc e logs.",
     proof: [
       "Usuários, grupos e arquivos de conta",
       "Permissões rwx, SUID, SGID e sticky bit",
@@ -72,9 +72,9 @@ Object.assign(window.CURRICULO.nodes, {
   "02": {
     num: "02", phase: "base", title: "Rede e HTTP", labs: 340, weeks: 6,
     tags: ["IP", "DNS", "TCP", "TLS", "HTTP"],
-    summary: "Toda falha web é uma falha de protocolo em algum nível. Desenhar o caminho é o exercício.",
+    summary: "Endereçamento, DNS, TCP, TLS e o caminho de um request.",
     proof: [
-      "Modelo OSI aplicado a um request real",
+      "Modelo OSI aplicado a um request HTTP",
       "IP, máscara, gateway e rotas",
       "DNS: registro, resolução e cache",
       "TCP, UDP e portas",
@@ -98,7 +98,7 @@ Object.assign(window.CURRICULO.nodes, {
   "03": {
     num: "03", phase: "base", title: "Código e automação", labs: 320, weeks: 6,
     tags: ["Python", "JS", "SQL", "Git"],
-    summary: "Você não precisa ser engenheiro, mas precisa ler e escrever o suficiente para não depender de script alheio.",
+    summary: "Python, SQL, Git e shell para escrever scripts próprios.",
     proof: [
       "Python: tipos, funções, módulos e erros",
       "requests, JSON e parsing de HTML",
@@ -123,7 +123,7 @@ Object.assign(window.CURRICULO.nodes, {
   "04": {
     num: "04", phase: "base", title: "Laboratório e Docker", labs: 240, weeks: 4,
     tags: ["Docker", "compose", "rede", "isolamento"],
-    summary: "Um lab que sobe em um comando é a diferença entre estudar e perder a tarde configurando.",
+    summary: "Imagens, containers, volumes e rede isolada para alvos locais.",
     proof: [
       "Imagem, container e camadas",
       "Volumes e persistência",
@@ -145,7 +145,7 @@ Object.assign(window.CURRICULO.nodes, {
   "05": {
     num: "05", phase: "beginner", title: "Web fundamentals", labs: 280, weeks: 5,
     tags: ["HTML", "DOM", "cookies", "same-origin"],
-    summary: "A web é um monte de estado escondido no browser. Quem entende o estado entende a falha.",
+    summary: "HTML, DOM, estado no browser e DevTools.",
     proof: [
       "HTML, formulários e validação",
       "CSS e seletores (o suficiente para XSS)",
@@ -167,7 +167,7 @@ Object.assign(window.CURRICULO.nodes, {
   "06": {
     num: "06", phase: "beginner", title: "Burp e interceptação", labs: 220, weeks: 4,
     tags: ["proxy", "repeater", "intruder", "scope"],
-    summary: "A ferramenta não acha nada sozinha. Ela só deixa você repetir e comparar mais rápido.",
+    summary: "Proxy, CA, Repeater, Intruder e escopo.",
     proof: [
       "Proxy e instalação da CA",
       "Intercept e histórico",
@@ -188,7 +188,7 @@ Object.assign(window.CURRICULO.nodes, {
   "07": {
     num: "07", phase: "beginner", title: "OWASP Top 10", labs: 520, weeks: 10,
     tags: ["SQLi", "XSS", "SSRF", "upload", "JWT"],
-    summary: "As falhas que ainda derrubam sistema em 2026, uma por uma, com e sem filtro.",
+    summary: "As dez categorias do OWASP, com e sem filtro.",
     proof: [
       "SQL injection: union, boolean e time-based",
       "XSS refletido, armazenado e DOM",
@@ -216,7 +216,7 @@ Object.assign(window.CURRICULO.nodes, {
   "08": {
     num: "08", phase: "beginner", title: "Recon e OSINT", labs: 320, weeks: 6,
     tags: ["DNS", "subdomínio", "Shodan", "dorks"],
-    summary: "O alvo começa antes do login. Superfície esquecida é o achado mais barato que existe.",
+    summary: "DNS, certificados, serviços expostos e fontes públicas.",
     proof: [
       "whois e DNS",
       "Certificate Transparency",
@@ -242,7 +242,7 @@ Object.assign(window.CURRICULO.nodes, {
   "09": {
     num: "09", phase: "beginner", title: "Configuração e exposição", labs: 300, weeks: 5,
     tags: ["Actuator", "S3", ".git", "headers"],
-    summary: "Antes de injetar, olhe o que já está aberto. Metade dos achados reais mora aqui.",
+    summary: "Debug, storage, backup, headers e CORS mal configurados.",
     proof: [
       "Actuator e endpoints de debug",
       "Buckets S3 e storage exposto",
@@ -268,7 +268,7 @@ Object.assign(window.CURRICULO.nodes, {
   "10": {
     num: "10", phase: "inter", title: "APIs e autorização", labs: 820, weeks: 12,
     tags: ["BOLA", "BFLA", "GraphQL", "mass assignment"],
-    summary: "Onde a maioria dos programas reais falha. A pergunta não é se existe auth, é o que cada usuário pode fazer.",
+    summary: "REST, verbos, autorização por objeto e limites.",
     proof: [
       "REST: verbos, status e idempotência",
       "BOLA: recurso de outro usuário",
@@ -295,7 +295,7 @@ Object.assign(window.CURRICULO.nodes, {
   "11": {
     num: "11", phase: "inter", title: "Autenticação e sessão", labs: 440, weeks: 7,
     tags: ["JWT", "OAuth", "OIDC", "SAML", "MFA"],
-    summary: "Login é o portão. Sessão é o que continua aberto depois que você entra.",
+    summary: "Cookies, JWT, OAuth, MFA e reset de senha.",
     proof: [
       "Sessão em cookie: atributos e sequestro",
       "JWT: header, payload e assinatura",
@@ -321,7 +321,7 @@ Object.assign(window.CURRICULO.nodes, {
   "12": {
     num: "12", phase: "inter", title: "Lógica de negócio", labs: 340, weeks: 5,
     tags: ["race condition", "cupom", "preço", "estoque"],
-    summary: "O bug não está no código, está na regra. Nenhuma ferramenta automática acha isso.",
+    summary: "Regras de preço, cupom, idempotência e concorrência.",
     proof: [
       "Race condition em requisições paralelas",
       "Cupom reutilizado e acumulado",
@@ -342,7 +342,7 @@ Object.assign(window.CURRICULO.nodes, {
   "13": {
     num: "13", phase: "inter", title: "Cloud e containers", labs: 780, weeks: 11,
     tags: ["AWS", "IAM", "S3", "K8s", "CI/CD"],
-    summary: "O que vaza quando a aplicação está tecnicamente correta: identidade, metadata e permissão.",
+    summary: "IAM, metadata, storage, Kubernetes e escape de container.",
     proof: [
       "IAM: usuário, role e política",
       "Metadata service e SSRF",
@@ -365,7 +365,7 @@ Object.assign(window.CURRICULO.nodes, {
   "14": {
     num: "14", phase: "inter", title: "Active Directory", labs: 500, weeks: 8,
     tags: ["Kerberos", "LDAP", "NTLM", "ADCS"],
-    summary: "Sair do web e chegar no domínio. É aqui que o teste deixa de ser sobre um site.",
+    summary: "Kerberos, LDAP, roasting, ACL, ADCS e trusts.",
     proof: [
       "Kerberos: TGT, TGS e tickets",
       "LDAP e enumeração",
@@ -389,7 +389,7 @@ Object.assign(window.CURRICULO.nodes, {
   "15": {
     num: "15", phase: "inter", title: "Rede interna e pivoting", labs: 380, weeks: 6,
     tags: ["túnel", "SOCKS", "lateral", "credencial"],
-    summary: "Uma credencial vale pouco se você não consegue chegar onde ela funciona.",
+    summary: "Túneis, enumeração interna e movimento lateral.",
     proof: [
       "Túneis SSH e port forwarding",
       "SOCKS e proxy chain",
@@ -410,7 +410,7 @@ Object.assign(window.CURRICULO.nodes, {
   "16": {
     num: "16", phase: "inter", title: "Mobile e thick client", labs: 380, weeks: 6,
     tags: ["APK", "Frida", "pinning", "storage"],
-    summary: "O app mente sobre o que está no servidor. E o cliente confia no que o app diz.",
+    summary: "APK, Frida, pinning, storage e deep link.",
     proof: [
       "Estrutura de um APK",
       "Decompilação e leitura de código",
@@ -431,7 +431,7 @@ Object.assign(window.CURRICULO.nodes, {
   "17": {
     num: "17", phase: "inter", title: "LLM e agentes", labs: 360, weeks: 6,
     tags: ["prompt injection", "RAG", "agentes", "tools"],
-    summary: "Prompt injection é a nova SQLi: entra por texto, sai como ação.",
+    summary: "Prompt injection direta e indireta, RAG, ferramentas e agentes.",
     proof: [
       "Prompt injection direta",
       "Injection indireta via documento",
@@ -453,7 +453,7 @@ Object.assign(window.CURRICULO.nodes, {
   "18": {
     num: "18", phase: "inter", title: "Supply chain", labs: 320, weeks: 5,
     tags: ["npm", "postinstall", "artifact", "SBOM"],
-    summary: "O ataque que começa antes do seu código: dependência, build, artefato e assinatura.",
+    summary: "Dependências, build, artefato, assinatura e SBOM.",
     proof: [
       "Dependência direta e transitiva",
       "postinstall e scripts",
@@ -475,7 +475,7 @@ Object.assign(window.CURRICULO.nodes, {
   "19": {
     num: "19", phase: "inter", title: "Consolidação", labs: 340, weeks: 5,
     tags: ["alvo", "relatório", "reteste"],
-    summary: "Juntar tudo em um caso só. Sem relatório, o achado não existe para ninguém.",
+    summary: "Recon, exploração, relatório e reteste em um alvo completo.",
     proof: [
       "Escolher um alvo de treino",
       "Recon completo",
@@ -499,7 +499,7 @@ Object.assign(window.CURRICULO.nodes, {
   "20": {
     num: "20", phase: "advanced", title: "Exploit dev: memória", labs: 800, weeks: 12,
     tags: ["stack", "ROP", "heap", "ASLR"],
-    summary: "Quando não existe CVE pronto. Memória, registrador e uma boa noite de sono.",
+    summary: "Stack, canary, ROP, ASLR, heap e format string.",
     proof: [
       "Stack overflow clássico",
       "Canary e bypass",
@@ -523,7 +523,7 @@ Object.assign(window.CURRICULO.nodes, {
   "21": {
     num: "21", phase: "advanced", title: "Exploit dev: web e browser", labs: 460, weeks: 7,
     tags: ["XSS", "CSP", "prototype", "smuggling"],
-    summary: "O browser é um sistema operacional com bugs de sistema operacional.",
+    summary: "XSS, CSP, prototype pollution, deserialização e smuggling.",
     proof: [
       "XSS avançado e bypass de filtro",
       "CSP e bypass",
@@ -544,7 +544,7 @@ Object.assign(window.CURRICULO.nodes, {
   "22": {
     num: "22", phase: "advanced", title: "Evasão e red team", labs: 400, weeks: 6,
     tags: ["EDR", "AMSI", "LOLBAS", "C2", "OPSEC"],
-    summary: "Achar a falha é metade. A outra metade é não ser visto no caminho.",
+    summary: "Evasão de AV e EDR, ofuscação, C2 e OPSEC.",
     proof: [
       "AV e EDR: o que detectam",
       "Ofuscação e empacotamento",
@@ -565,7 +565,7 @@ Object.assign(window.CURRICULO.nodes, {
   "23": {
     num: "23", phase: "advanced", title: "Fuzzing e reverse", labs: 480, weeks: 8,
     tags: ["AFL++", "Ghidra", "assembly", "crash"],
-    summary: "Quando o código é fechado, você conversa com o binário. Fuzzing é perguntar em escala.",
+    summary: "Fuzzing, engenharia reversa e triagem de crash.",
     proof: [
       "AFL++",
       "libFuzzer",
@@ -586,7 +586,7 @@ Object.assign(window.CURRICULO.nodes, {
   "24": {
     num: "24", phase: "advanced", title: "Pesquisa e CVE", labs: 340, weeks: 5,
     tags: ["patch", "diff", "PoC", "divulgação"],
-    summary: "A diferença entre usar CVE e entender CVE é ler o patch.",
+    summary: "Patch, diff, PoC e divulgação.",
     proof: [
       "Ler um patch e achar a causa",
       "Diff de versão",
@@ -606,7 +606,7 @@ Object.assign(window.CURRICULO.nodes, {
   "25": {
     num: "25", phase: "expert", title: "Bug bounty", labs: 360, weeks: 6,
     tags: ["escopo", "triagem", "relatório", "reteste"],
-    summary: "O mundo real não tem flag. Tem prazo, escopo e um triager cansado.",
+    summary: "Escopo, recon, triagem, relatório e reteste.",
     proof: [
       "Escolher programa e escopo",
       "Recon contínuo",
@@ -626,7 +626,7 @@ Object.assign(window.CURRICULO.nodes, {
   "26": {
     num: "26", phase: "expert", title: "Cloud research", labs: 380, weeks: 6,
     tags: ["IAM", "K8s", "serverless", "containers"],
-    summary: "Nuvem é um labirinto de identidade. O caminho de escalada é o produto.",
+    summary: "IAM, runtime Kubernetes, serverless e caminhos de escalada.",
     proof: [
       "IAM avançado e policy",
       "Kubernetes e escape",
@@ -645,7 +645,7 @@ Object.assign(window.CURRICULO.nodes, {
   "27": {
     num: "27", phase: "expert", title: "Kernel e hardware", labs: 720, weeks: 12,
     tags: ["kernel", "eBPF", "IoT", "mitigações"],
-    summary: "O último nível do software antes do silício. Aqui o debugger é a única testemunha.",
+    summary: "Kernel, eBPF, mitigação, firmware e hardware.",
     proof: [
       "Kernel: módulos e syscalls",
       "eBPF",
@@ -665,7 +665,7 @@ Object.assign(window.CURRICULO.nodes, {
   "28": {
     num: "28", phase: "expert", title: "IA ofensiva", labs: 360, weeks: 6,
     tags: ["agentes", "RAG", "tools", "avaliação"],
-    summary: "Modelos não são mágica. São entrada, contexto e ferramenta — e os três podem ser enganados.",
+    summary: "Avaliação de agentes, RAG e uso de ferramentas por modelo.",
     proof: [
       "Agentes e planejamento",
       "RAG e contexto",
@@ -684,7 +684,7 @@ Object.assign(window.CURRICULO.nodes, {
   "29": {
     num: "29", phase: "expert", title: "Projeto final", labs: 500, weeks: 12,
     tags: ["pesquisa", "writeup", "defesa"],
-    summary: "Não é um curso. É uma pesquisa que só você faria, com o método que você construiu.",
+    summary: "Pesquisa própria: tema, método e publicação.",
     proof: [
       "Escolher um tema próprio",
       "Levantar estado da arte",
@@ -744,75 +744,75 @@ for (const [id, sub] of Object.entries(SUBS)) {
 window.CURRICULO.flow = [
   { type: "phase", id: "base" },
   { type: "node", id: "00" },
-  { type: "check", text: "explico o que é um processo e onde ficam meus arquivos" },
+  { type: "check", text: "Explicar processo, arquivo, usuário e ambiente." },
   { type: "node", id: "01" },
-  { type: "check", text: "resolvo Bandit 0–15 sem colar" },
+  { type: "check", text: "Resolver Bandit 0–15 sem consultar solução." },
   { type: "node", id: "02" },
-  { type: "check", text: "desenho o caminho de uma URL até a resposta" },
+  { type: "check", text: "Desenhar o caminho de uma URL até o response." },
   { type: "node", id: "03" },
-  { type: "check", text: "escrevo um script de recon que gera relatório" },
+  { type: "check", text: "Escrever um script que coleta dados e gera relatório." },
   { type: "node", id: "04" },
-  { type: "check", text: "subo e derrubo um alvo sem sujar a máquina" },
+  { type: "check", text: "Subir e remover um alvo sem alterar o host." },
   { type: "node", id: "30" },
-  { type: "check", text: "compilo C, leio assembly e explico uma mitigação" },
+  { type: "check", text: "Compilar C, ler assembly e explicar uma mitigação." },
 
   { type: "phase", id: "beginner" },
   { type: "node", id: "05" },
   { type: "node", id: "06" },
-  { type: "check", text: "intercepto e repito uma requisição autenticada" },
+  { type: "check", text: "Interceptar e repetir uma requisição autenticada." },
   { type: "node", id: "07" },
-  { type: "check", text: "passo 40 labs do PortSwigger, 10 sem solução" },
+  { type: "check", text: "Concluir 40 labs do PortSwigger, 10 sem solução." },
   { type: "node", id: "08" },
-  { type: "check", text: "monto um mapa de superfície de um domínio" },
+  { type: "check", text: "Mapear a superfície de um domínio." },
   { type: "node", id: "09" },
-  { type: "check", text: "acho três achados de configuração com evidência" },
+  { type: "check", text: "Registrar três achados de configuração com evidência." },
   { type: "node", id: "31" },
-  { type: "check", text: "acho três persistências no Windows e provo qual sobrevive ao reboot" },
+  { type: "check", text: "Encontrar três persistências no Windows e provar qual sobrevive ao reboot." },
   { type: "node", id: "33" },
-  { type: "check", text: "rodo uma campanha de phishing em lab com métricas e debrief" },
+  { type: "check", text: "Executar uma campanha de phishing em lab com métricas e relatório." },
 
   { type: "phase", id: "inter" },
-  { type: "fork", title: "Aqui o caminho bifurca.", desc: "Escolha por onde aprofundar primeiro. As três trilhas continuam abertas; nenhuma é obrigatória para seguir.",
+  { type: "fork", title: "Trilhas", desc: "Escolha a ordem. As três trilhas ficam abertas.",
     lanes: [
       { key: "web", name: "Web & API", color: "#3fe0ff", nodes: ["11", "10", "12"] },
       { key: "infra", name: "Infra & Cloud", color: "#ffb020", nodes: ["13", "14", "32", "15"] },
       { key: "produto", name: "Produto & IA", color: "#ff2e63", nodes: ["16", "17", "18"] }
     ] },
   { type: "node", id: "19" },
-  { type: "check", text: "entrego um relatório completo com impacto e correção" },
+  { type: "check", text: "Entregar relatório com impacto, evidência e correção." },
 
   { type: "phase", id: "advanced" },
   { type: "node", id: "20" },
-  { type: "check", text: "escrevo um exploit que funciona sem copiar PoC" },
+  { type: "check", text: "Escrever um exploit funcional sem copiar PoC." },
   { type: "node", id: "21" },
   { type: "node", id: "22" },
   { type: "node", id: "34" },
   { type: "node", id: "35" },
-  { type: "check", text: "reconstruo um incidente em timeline e detecto a minha operação" },
+  { type: "check", text: "Reconstruir um incidente em timeline e detectar a própria operação." },
   { type: "node", id: "23" },
   { type: "node", id: "36" },
   { type: "node", id: "39" },
-  { type: "check", text: "publico um writeup e um advisory em inglês" },
+  { type: "check", text: "Publicar um writeup e um advisory em inglês." },
   { type: "node", id: "24" },
-  { type: "check", text: "publico um CVE ou writeup original" },
+  { type: "check", text: "Publicar um CVE ou writeup original." },
 
   { type: "phase", id: "expert" },
   { type: "node", id: "25" },
   { type: "node", id: "26" },
   { type: "node", id: "27" },
-  { type: "check", text: "escrevo um PoC próprio para um alvo de pesquisa" },
+  { type: "check", text: "Escrever um PoC próprio para um alvo de pesquisa." },
   { type: "node", id: "37" },
   { type: "node", id: "38" },
   { type: "node", id: "28" },
   { type: "node", id: "29" },
-  { type: "check", text: "defendo a minha pesquisa numa conversa técnica" }
+  { type: "check", text: "Defender a pesquisa em uma conversa técnica." }
 ];
 
 Object.assign(window.CURRICULO.nodes, {
   "30": {
     num: "30", phase: "base", title: "C, assembly e internals", labs: 300, weeks: 6,
     tags: ["C", "x86-64", "gdb", "ELF", "mitigações"],
-    summary: "Sem entender memória, exploit vira cópia de PoC. Esta é a base que falta em quase todo curso de web.",
+    summary: "C, memória, assembly x86-64, GDB e mitigações.",
     proof: [
       "Compilar C com gcc/clang e explicar pré-processamento, compilação, assembly e link",
       "Implementar lista ligada, vetor dinâmico e parser com malloc/free",
@@ -834,7 +834,7 @@ Object.assign(window.CURRICULO.nodes, {
   "31": {
     num: "31", phase: "beginner", title: "Windows, PowerShell e endpoint", labs: 260, weeks: 5,
     tags: ["Windows", "PowerShell", "SMB", "Sysinternals"],
-    summary: "Metade do mundo corporativo roda Windows. AD sem Windows é decorar nome de ferramenta.",
+    summary: "Tokens, UAC, registry, serviços, WMI, SMB, WinRM e logs.",
     proof: [
       "Enumerar usuários, grupos, serviços e tarefas via PowerShell/CIM",
       "Explicar token de acesso e UAC; provar que admin elevado não é SYSTEM",
@@ -855,7 +855,7 @@ Object.assign(window.CURRICULO.nodes, {
   "32": {
     num: "32", phase: "inter", title: "Identidade híbrida: Entra ID", labs: 280, weeks: 5,
     tags: ["Entra", "device code", "consent", "PRT"],
-    summary: "O AD moderno não está só no domínio. Está no token, no consent e no dispositivo.",
+    summary: "Tenant, Graph, device code, consent, PRT e Conditional Access.",
     proof: [
       "Mapear tenant de teste via Graph e ROADtools",
       "Executar device code flow e obter token sem MFA",
@@ -876,7 +876,7 @@ Object.assign(window.CURRICULO.nodes, {
   "33": {
     num: "33", phase: "beginner", title: "Engenharia social e phishing", labs: 200, weeks: 4,
     tags: ["phishing", "AiTM", "SPF", "DMARC"],
-    summary: "O vetor inicial mais comum não é um bug de software. É uma pessoa com pressa.",
+    summary: "Pretexto, landing page, AiTM, MFA e métricas de campanha.",
     proof: [
       "Construir pretexto e lista de alvos a partir de OSINT",
       "Clonar fluxo de login em lab e capturar credencial e cookie",
@@ -897,7 +897,7 @@ Object.assign(window.CURRICULO.nodes, {
   "34": {
     num: "34", phase: "advanced", title: "DFIR: resposta a incidentes", labs: 300, weeks: 6,
     tags: ["DFIR", "Volatility", "timeline", "custódia"],
-    summary: "Saber atacar inclui saber reconstruir o que aconteceu. Sem timeline, não existe incidente.",
+    summary: "Aquisição, memória, disco, timeline, contenção e relatório.",
     proof: [
       "Adquirir memória e disco com hash e cadeia de custódia",
       "Usar Volatility 3 para processos, rede e hives",
@@ -918,7 +918,7 @@ Object.assign(window.CURRICULO.nodes, {
   "35": {
     num: "35", phase: "advanced", title: "Wireless, RF e Bluetooth", labs: 200, weeks: 4,
     tags: ["WPA2", "WPA3", "802.1X", "BLE", "SDR"],
-    summary: "O cabo é só uma das redes. O ar é compartilhado, invisível e quase sempre mal monitorado.",
+    summary: "WPA2/WPA3, 802.1X, evil twin, BLE, SDR e replay.",
     proof: [
       "Capturar handshake WPA2 e quebrar PSK fraca em lab",
       "Executar PMKID e explicar quando funciona",
@@ -939,7 +939,7 @@ Object.assign(window.CURRICULO.nodes, {
   "36": {
     num: "36", phase: "advanced", title: "Análise de malware", labs: 280, weeks: 5,
     tags: ["malware", "YARA", "sandbox", "C2"],
-    summary: "Nem todo ataque é um bug. Às vezes é um executável que faz exatamente o que promete.",
+    summary: "Triagem estática, análise dinâmica, unpacking, C2 e YARA.",
     proof: [
       "Triagem estática: hash, strings, imports, entropia e packer",
       "Analisar PE/ELF: seções, entrypoint e anomalias",
@@ -960,7 +960,7 @@ Object.assign(window.CURRICULO.nodes, {
   "37": {
     num: "37", phase: "expert", title: "OT/ICS e sistemas críticos", labs: 220, weeks: 5,
     tags: ["Purdue", "Modbus", "PLC", "62443"],
-    summary: "Em hospital, o ativo não é o dado. É o equipamento que mantém alguém vivo.",
+    summary: "Purdue, IEC 62443, Modbus, PLC e IT→OT.",
     proof: [
       "Desenhar Purdue e zonas/conduits de um hospital",
       "Ler coils e registers Modbus com pymodbus",
@@ -981,7 +981,7 @@ Object.assign(window.CURRICULO.nodes, {
   "38": {
     num: "38", phase: "expert", title: "SAP e sistemas corporativos", labs: 240, weeks: 5,
     tags: ["SAP", "NetWeaver", "RFC", "ABAP"],
-    summary: "O ERP que ninguém quer testar é o que guarda o dinheiro. E quase nunca está no escopo.",
+    summary: "NetWeaver, SAProuter, RFC/ABAP, autorização e patch.",
     proof: [
       "Desenhar NetWeaver: ICM, dispatcher, message server e SAProuter",
       "Enumerar serviços e clientes SAP em lab",
@@ -1002,7 +1002,7 @@ Object.assign(window.CURRICULO.nodes, {
   "39": {
     num: "39", phase: "advanced", title: "Escrita técnica e pesquisa", labs: 120, weeks: 12,
     tags: ["paper", "advisory", "inglês", "CFP"],
-    summary: "Pesquisa que ninguém entende não existe. Escrever é parte do trabalho, não o final dele.",
+    summary: "Leitura crítica, advisory, writeup, reprodutibilidade e CFP.",
     proof: [
       "Ler três papers e escrever uma página de resumo crítico",
       "Escrever advisory estilo CVE com versões, causa e PoC",

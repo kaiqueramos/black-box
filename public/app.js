@@ -71,7 +71,7 @@ function renderNode(node, compact = false) {
   expand.setAttribute("aria-expanded", "false");
   expand.setAttribute("aria-controls", `d-${id}`);
   const label = el("span");
-  label.innerHTML = `o que eu preciso provar <span class="count">(${node.proof.length})</span>`;
+  label.innerHTML = `critérios <span class="count">(${node.proof.length})</span>`;
   const sign = el("span", "sign", "+");
   sign.setAttribute("aria-hidden", "true");
   expand.append(label, sign);
@@ -81,7 +81,7 @@ function renderNode(node, compact = false) {
   const wrap = el("div");
   const inner = el("div", "detail-inner");
 
-  inner.appendChild(el("h4", null, "o que eu preciso provar"));
+  inner.appendChild(el("h4", null, "critérios"));
   const proof = el("ul", "proof");
   for (const item of node.proof) {
     const li = el("li");
@@ -92,7 +92,7 @@ function renderNode(node, compact = false) {
   }
   inner.appendChild(proof);
 
-  inner.appendChild(el("h4", null, "para estudar"));
+  inner.appendChild(el("h4", null, "recursos"));
   const res = el("ul", "resources");
   for (const [type, title, url] of node.res) {
     const li = el("li");
@@ -195,7 +195,6 @@ function renderFork(item) {
   box.appendChild(lanes);
 
   const join = el("div", "join");
-  join.appendChild(el("span", null, "as três trilhas convergem"));
   box.appendChild(join);
   return box;
 }
