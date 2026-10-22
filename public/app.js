@@ -19,7 +19,7 @@ if (statTotal) statTotal.textContent = `/${totalNodes}`;
 
 statLabs.textContent = fmt(totalLabs);
 if (introSub) {
-  introSub.textContent = `${totalNodes} marcos, ${fmt(totalLabs)} labs e ${totalChecks} checkpoints. Sem atalho e sem prazo.`;
+  introSub.textContent = `${totalNodes} marcos / ${fmt(totalLabs)} labs / ${totalChecks} checkpoints`;
 }
 
 const TYPE_LABEL = { doc: "doc", repo: "repo", livro: "livro", video: "vídeo", lab: "lab", curso: "curso" };
