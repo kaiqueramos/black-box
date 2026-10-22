@@ -1,79 +1,55 @@
 # Currículo
 
-335 labs em 12 níveis. Estimativa: 18–30 meses a 8–10h/semana.
+**Fonte de verdade:** `public/data.js`. Este arquivo é um resumo; a página em `public/index.html` renderiza tudo a partir dele.
 
-## Mapa
+40 marcos · 14.880 labs · 19 checkpoints · 5 fases.
 
-| Nível | Foco | Labs | Certificação no fim |
-|---|---|---|---|
-| 0 | Fundamentos: Linux, rede, HTTP, código | 15 | — |
-| 1 | Web clássico (OWASP Top 10) | 25 | — |
-| 2 | APIs e auth moderna | 45 | eJPT |
-| 3 | Lógica de negócio e falhas de fluxo | 25 | — |
-| 4 | Cloud e containers | 45 | BSCP |
-| 5 | Supply chain | 20 | — |
-| 6 | Active Directory e rede interna | 40 | CPTS |
-| 7 | Mobile e thick client | 20 | — |
-| 8 | LLM e segurança de IA | 20 | — |
-| 9 | Detecção e purple team | 30 | — |
-| 10 | Exploit development | 30 | OSCP |
-| 11 | Mundo real: bug bounty e relatório | 20 | — |
+| # | Fase | Marco | Labs | Semanas | Sub-marcos |
+|---|---|---|---|---|---|
+| 01 | Base | Alfabetização digital | 180 | 4 | Sistema e arquivos · Permissões e processos · Terminal e automação |
+| 02 | Base | Linux essencial | 300 | 6 | Usuários e permissões · Processos e serviços · Shell e logs |
+| 03 | Base | Rede e HTTP | 340 | 6 | Endereçamento e DNS · TCP, TLS e HTTP · Captura e proxy |
+| 04 | Base | Código e automação | 320 | 6 | Python e scripts · Web e SQL · Git e debug |
+| 05 | Base | Laboratório e Docker | 240 | 4 | Imagem e container · Compose e rede · Laboratório local |
+| 06 | Base | C, assembly e internals | 300 | 6 | C e memória · Assembly x86-64 · GDB e binário · Mitigações |
+| 07 | Iniciante | Web fundamentals | 280 | 5 | HTML e DOM · Estado no browser · DevTools |
+| 08 | Iniciante | Burp e interceptação | 220 | 4 | Proxy e CA · Repeater e Intruder · Extensões e escopo |
+| 09 | Iniciante | OWASP Top 10 | 520 | 10 | Injection · Client-side · Server-side · Auth e token |
+| 10 | Iniciante | Recon e OSINT | 320 | 6 | DNS e domínio · Serviços e tech · OSINT e vazamento |
+| 11 | Iniciante | Configuração e exposição | 300 | 5 | Debug e admin · Storage e backup · Headers e CORS |
+| 12 | Iniciante | Windows, PowerShell e endpoint | 260 | 5 | Tokens e UAC · Registry, serviços e WMI · SMB e WinRM · Logs e Sysinternals |
+| 13 | Iniciante | Engenharia social e phishing | 200 | 4 | Pretexto e OSINT · Kit e landing page · AiTM e MFA · Métricas, debrief e legal |
+| 14 | Intermediário | Autenticação e sessão | 440 | 7 | Sessão e cookie · JWT e OAuth · MFA e reset |
+| 15 | Intermediário | APIs e autorização | 820 | 12 | REST e verbos · Autorização · GraphQL e limites |
+| 16 | Intermediário | Lógica de negócio | 340 | 5 | Race e concorrência · Preço e cupom · Fluxo e idempotência |
+| 17 | Intermediário | Cloud e containers | 780 | 11 | IAM e metadata · Storage e K8s · CI/CD e escape |
+| 18 | Intermediário | Active Directory | 500 | 8 | Kerberos e LDAP · Roasting e ACL · ADCS e trusts |
+| 19 | Intermediário | Identidade híbrida: Entra ID | 280 | 5 | Tenant e Graph · Device code e token theft · Consent e aplicações · Híbrido, PRT e CA |
+| 20 | Intermediário | Rede interna e pivoting | 380 | 6 | Túneis · Movimento lateral · Enumeração interna |
+| 21 | Intermediário | Mobile e thick client | 380 | 6 | APK e código · Frida e pinning · Storage e deep link |
+| 22 | Intermediário | LLM e agentes | 360 | 6 | Injection direta · RAG e indireta · Agentes e tools |
+| 23 | Intermediário | Supply chain | 320 | 5 | Dependência · Build e artefato · Assinatura e SBOM |
+| 24 | Intermediário | Consolidação | 340 | 5 | Alvo e recon · Exploração · Relatório e reteste |
+| 25 | Avançado | Exploit dev: memória | 800 | 12 | Stack e canary · ROP e ASLR · Heap e format string |
+| 26 | Avançado | Exploit dev: web e browser | 460 | 7 | XSS e CSP · Prototype e deserialização · Smuggling e cache |
+| 27 | Avançado | Evasão e red team | 400 | 6 | AV e EDR · Ofuscação e C2 · OPSEC e detecção |
+| 28 | Avançado | DFIR: resposta a incidentes | 300 | 6 | Aquisição e custódia · Memória e disco · Timeline e artefatos · Contenção e relatório |
+| 29 | Avançado | Wireless, RF e Bluetooth | 200 | 4 | WPA2/WPA3 · 802.1X e evil twin · BLE · SDR e replay |
+| 30 | Avançado | Fuzzing e reverse | 480 | 8 | Fuzzing · Reverse · Triagem |
+| 31 | Avançado | Análise de malware | 280 | 5 | Triagem estática · Dinâmica e sandbox · Unpacking e C2 · YARA e relatório |
+| 32 | Avançado | Escrita técnica e pesquisa | 120 | 12 | Leitura crítica · Advisory e writeup · Reprodutibilidade · Inglês e CFP |
+| 33 | Avançado | Pesquisa e CVE | 340 | 5 | Patch e diff · PoC · Divulgação |
+| 34 | Especialista | Bug bounty | 360 | 6 | Programa e escopo · Recon e triagem · Relatório e reteste |
+| 35 | Especialista | Cloud research | 380 | 6 | IAM · K8s e runtime · Serverless |
+| 36 | Especialista | Kernel e hardware | 720 | 12 | Kernel · eBPF e mitigação · Hardware e firmware |
+| 37 | Especialista | OT/ICS e sistemas críticos | 220 | 5 | Purdue e 62443 · Modbus e PLC · IT→OT · Detecção e resposta |
+| 38 | Especialista | SAP e sistemas corporativos | 240 | 5 | Arquitetura NetWeaver · SAProuter e serviços · RFC/ABAP e autorização · Patch e relatório |
+| 39 | Especialista | IA ofensiva | 360 | 6 | Agentes · RAG e tools · Avaliação |
+| 40 | Especialista | Projeto final | 500 | 12 | Tema · Pesquisa · Publicação |
 
-## Critério de aprovação (todos os labs)
+## Como usar
 
-1. Flag capturada.
-2. Writeup com: contexto, hipótese, evidência, causa raiz e correção.
-3. Tempo anotado (para medir evolução).
-4. Nenhuma consulta à solução antes de 40 minutos de tentativa real.
-
----
-
-## Nível 0 — Fundamentos (15)
-
-| # | Lab | O que prova |
-|---|---|---|
-| 001 | linux-sobrevivencia | permissões, processos, usuários, arquivos |
-| 002 | shell-pipelines | grep, sed, awk, jq, xargs |
-| 003 | rede-do-zero | IP, DNS, TCP/UDP, rotas, portas |
-| 004 | http-a-fundo | métodos, status, headers, cookies, cache |
-| 005 | tls-na-pratica | handshake, certificado, SNI, openssl |
-| 006 | python-para-ofensiva | requests, parsing, script de recon |
-| 007 | javascript-e-o-browser | DOM, fetch, storage, same-origin |
-| 008 | git-sem-medo | branch, diff, bisect, recuperar commit |
-| 009 | docker-essencial | imagem, volume, rede, compose |
-| 010 | logs-e-processos | ss, lsof, journalctl, /proc |
-| 011 | cripto-util | hash, HMAC, base64, JWT decode |
-| 012 | encoding-e-ofuscacao | URL, hex, unicode, duplo encode |
-| 013 | proxy-e-burp | interceptar, repetir, intruder, scope |
-| 014 | recon-passivo | whois, dig, crt.sh, headers, bundle JS |
-| 015 | escrever-achado | template de finding com evidência |
-
-## Nível 1 — Web clássico (25)
-
-| # | Lab | O que prova |
-|---|---|---|
-| 016 | sqli-basico | union, erro, booleano |
-| 017 | sqli-blind | time-based, extração sem saída |
-| 018 | xss-refletido | contexto HTML, atributo, JS |
-| 019 | xss-armazenado | persistência e roubo de sessão |
-| 020 | xss-dom | sink, source, bypass de filtro |
-| 021 | csrf | token ausente, SameSite, método |
-| 022 | ssrf-basico | acesso a serviço interno |
-| 023 | ssrf-metadata | 169.254.169.254 e credencial de nuvem |
-| 024 | lfi | path traversal, wrapper, log poisoning |
-| 025 | rfi | inclusão remota e execução |
-| 026 | upload-simples | upload de webshell |
-| 027 | upload-bypass | MIME, magic bytes, extensão |
-| 028 | command-injection | separadores, blind, out-of-band |
-| 029 | ssti | detecção e RCE por template |
-| 030 | xxe | leitura de arquivo e SSRF |
-| 031 | deserialization | gadget chain simples |
-| 032 | idor-basico | troca de ID em recurso |
-| 033 | auth-bypass | lógica de login, força bruta contida |
-| 034 | jwt-none | algoritmo none |
-| 035 | jwt-confusao | RS256 → HS256 |
-| 036 | cors | reflexão de Origin com credentials |
-| 037 | open-redirect | cadeia para roubo de token |
-| 038 | clickjacking | frame + UI falsa |
-| 039 | information-disclosure | stack trace, backup, source map |
-| 040 | headers-e-csp | bypass de CSP e política correta |
+1. Abra a página (`public/index.html`).
+2. Escolha o próximo marco não concluído.
+3. Leia os sub-marcos, abra os recursos e faça os labs.
+4. Marque como feito só quando o checkpoint estiver provado.

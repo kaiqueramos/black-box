@@ -4,6 +4,8 @@ Mapa: https://kaiqueramos.github.io/black-box/
 
 Laboratório pessoal de segurança ofensiva: do zero ao nível de pesquisar sozinho.
 
+O mapa completo tem **40 marcos, 14.880 labs e 19 checkpoints**. A fonte de verdade é [`public/data.js`](public/data.js).
+
 Cada lab é um alvo isolado, com uma flag `LAB{...}`, um critério de aprovação e uma solução que só deve ser aberta depois de tentar.
 
 ## Como funciona
