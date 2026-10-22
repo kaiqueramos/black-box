@@ -1,0 +1,6 @@
+services:
+  alvo:
+    build: .
+    container_name: lab-001
+    restart: "no"
+    # sem portas: o acesso e por docker exec, como o usuario aluno
