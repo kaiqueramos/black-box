@@ -1,0 +1,12 @@
+services:
+  alvo:
+    image: alpine:3.20
+    container_name: lab-alvo
+    # sempre preso no loopback: nada exposto na rede
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./flag.txt:/flag.txt:ro
+    command: >
+      sh -c "echo 'alvo no ar'; tail -f /dev/null"
+    restart: "no"
