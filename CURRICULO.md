@@ -8,11 +8,11 @@
 |---|---|---|---|
 | 0 | Fundamentos: Linux, rede, HTTP, código | 15 | — |
 | 1 | Web clássico (OWASP Top 10) | 25 | — |
-| 2 | APIs e auth moderna | 40 | eJPT |
+| 2 | APIs e auth moderna | 45 | eJPT |
 | 3 | Lógica de negócio e falhas de fluxo | 25 | — |
-| 4 | Cloud e containers | 40 | BSCP |
+| 4 | Cloud e containers | 45 | BSCP |
 | 5 | Supply chain | 20 | — |
-| 6 | Active Directory e rede interna | 35 | CPTS |
+| 6 | Active Directory e rede interna | 40 | CPTS |
 | 7 | Mobile e thick client | 20 | — |
 | 8 | LLM e segurança de IA | 20 | — |
 | 9 | Detecção e purple team | 30 | — |

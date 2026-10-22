@@ -1,5 +1,7 @@
 # black-box
 
+Mapa: https://kaiqueramos.github.io/black-box/
+
 Laboratório pessoal de segurança ofensiva: do zero ao nível de pesquisar sozinho.
 
 Cada lab é um alvo isolado, com uma flag `LAB{...}`, um critério de aprovação e uma solução que só deve ser aberta depois de tentar.
