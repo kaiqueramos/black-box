@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>black-box — mapa de estudo</title>
-<meta name="description" content="Mapa pessoal de estudo de segurança ofensiva: 12 níveis, 335 labs.">
+<title>black-box — o caminho</title>
+<meta name="description" content="Mapa pessoal de segurança ofensiva: 40 marcos, 14.880 labs, do zero à pesquisa.">
 <meta name="theme-color" content="#05060a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
@@ -12,58 +12,52 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip" href="#map">Ir para o mapa</a>
+<a class="skip" href="#flow">Pular para o caminho</a>
 <canvas id="bg" aria-hidden="true"></canvas>
-<div class="vignette" aria-hidden="true"></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
 <div class="spot" id="spot" aria-hidden="true"></div>
 
 <header class="hud">
-  <div class="hud-brand">
-    <span class="brand">black-box<span class="caret" aria-hidden="true">_</span></span>
-    <span class="hud-label mono">mapa de estudo</span>
+  <div class="hud-left">
+    <a class="brand" href="#top">black-box<span aria-hidden="true">_</span></a>
+    <span class="hud-sub mono">o caminho</span>
   </div>
-  <div class="hud-tools">
-    <span class="counter mono" aria-live="polite"><b id="done">0</b><span>/12</span></span>
-    <div class="zoom" role="group" aria-label="Zoom do mapa">
-      <button id="z-out" type="button" aria-label="Diminuir zoom">−</button>
-      <button id="z-in" type="button" aria-label="Aumentar zoom">+</button>
-      <button id="z-reset" type="button" aria-label="Recentralizar mapa">◎</button>
-    </div>
-    <a class="repo mono" href="https://github.com/kaiqueramos/black-box" target="_blank" rel="noopener">repo <span aria-hidden="true">↗</span></a>
+  <div class="hud-right">
+    <span class="hud-stat mono"><b id="stat-labs">14.880</b> labs</span>
+    <span class="hud-stat mono" id="stat-progress"><b id="stat-done">0</b><span id="stat-total">/40</span> feitos</span>
+    <button id="expand-all" class="hud-btn mono" type="button" aria-pressed="false">expandir tudo</button>
   </div>
+  <div class="hud-bar" aria-hidden="true"><i id="hud-fill"></i></div>
 </header>
 
-<main class="stage">
-  <svg id="map" role="application" aria-label="Mapa do currículo. Use Tab para percorrer os níveis e Enter para abrir."></svg>
-  <p class="hint mono" id="hint">arraste para mover · scroll para zoom · clique num nó</p>
-  <p class="status mono" id="status">próximo · 00 fundamentos</p>
+<nav class="rail mono" aria-label="Fases">
+  <a href="#phase-base" data-phase="base"><span>00</span> base</a>
+  <a href="#phase-beginner" data-phase="beginner"><span>01</span> iniciante</a>
+  <a href="#phase-inter" data-phase="inter"><span>02</span> intermediário</a>
+  <a href="#phase-advanced" data-phase="advanced"><span>03</span> avançado</a>
+  <a href="#phase-expert" data-phase="expert"><span>04</span> especialista</a>
+</nav>
+
+<main id="top">
+  <section class="intro" aria-labelledby="intro-title">
+    <p class="intro-kicker mono"><span class="dot" aria-hidden="true"></span> mapa de estudo · sem prazo</p>
+    <h1 id="intro-title">Do zero ao<br><em>meu próprio método</em>.</h1>
+    <p class="intro-sub" id="intro-sub">40 marcos, 14.880 labs e 19 checkpoints. Sem atalho e sem prazo.</p>
+    <p class="intro-meta mono">arraste a barra · clique para abrir · marque o que já foi</p>
+  </section>
+
+  <div id="flow" class="flow"></div>
+
+  <footer class="foot">
+    <div>
+      <span class="brand">black-box<span aria-hidden="true">_</span></span>
+      <p class="mono">feito para estudar sem quebrar nada.</p>
+    </div>
+    <a class="mono" href="https://github.com/kaiqueramos/black-box" target="_blank" rel="noopener">repo <span aria-hidden="true">↗</span></a>
+  </footer>
 </main>
 
-<aside id="panel" class="panel" aria-hidden="true" aria-labelledby="p-title">
-  <div class="panel-head">
-    <span class="panel-kicker mono" id="p-kicker">nível 00</span>
-    <button class="panel-close" id="p-close" type="button" aria-label="Fechar painel">×</button>
-  </div>
-  <h2 id="p-title" tabindex="-1">—</h2>
-  <p class="panel-meta mono" id="p-meta"></p>
-  <p class="panel-focus" id="p-focus"></p>
-  <ul class="panel-tags" id="p-tags"></ul>
-
-  <details class="panel-more" id="p-more">
-    <summary>o que eu preciso provar</summary>
-    <p id="p-proof"></p>
-    <ul class="panel-labs mono" id="p-labs"></ul>
-  </details>
-
-  <div class="panel-foot">
-    <button id="p-done" class="p-done" type="button" aria-pressed="false">marcar como feito</button>
-    <div class="p-nav" role="group" aria-label="Navegar entre níveis">
-      <button id="p-prev" type="button" aria-label="Nível anterior">←</button>
-      <button id="p-next" type="button" aria-label="Próximo nível">→</button>
-    </div>
-  </div>
-</aside>
-
+<script src="data.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>
